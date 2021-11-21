@@ -1,12 +1,40 @@
+#checking if a number is prime
 def prime(a):
-  for as i range(2,a+1):
   for i in range(2,a):
-    b=a%i
-    if b==0:
-      c="the number is not prime"
-    else:
-      c="the number is prime"
-    return c
-nu=int(input("enter the number:\n"))
-print(prime(nu))
+    if a%i==0:
+      return False
+  return True
+
+#finding out the prime numbers up to a highest number
+def within_prime(h):
+  list=[]
+  for t in range(2,h+1):
+    if prime(t) is True:
+      list.append(t)
+  return list
+#finding prime factors
+def no(m):
+  hi=[]
+  hu=within_prime(m)
+  for h in hu:
+    if m%h==0:
+      hi.append(h)
+  return hi
+
+y=int(input("the num:\n")) 
+s=no(y)
+print("the prime factors of "+str(y)+" are:\n")
+for t in s:
+  print(t)
+
+  
+  
+
+    
+  
+
+    
+      
+    
+    
   
